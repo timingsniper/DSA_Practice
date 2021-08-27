@@ -1,0 +1,38 @@
+#include <iostream>
+#include <math.h>
+#include <cmath>
+#include <cstring>
+#include <string.h>
+#include <iomanip>
+#include <stdlib.h>
+#include <vector>
+#include <algorithm>
+#include <ctype.h>
+#include <string>
+#include <stdio.h>
+#include <queue>
+
+using namespace std;
+
+const int inf = 9999999;
+
+int divideApple(int m, int n) { //m apples on n plates
+	if (m == 0 || n == 1) { //only one plate left (in this case apple can only be put in one way)
+		return 1;
+	}
+	if (n > m) { //there are more plates than # of apples
+		return divideApple(m, m);
+	}
+	else {
+		return divideApple(m, n - 1) + divideApple(m - n, n);
+	}
+}
+
+int main() {
+	int t, m, n;
+	cin >> t;
+	for (int i = 0; i < t; i++) {
+		cin >> m >> n;
+		cout << divideApple(m, n) << endl;
+	}
+}
