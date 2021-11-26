@@ -26,6 +26,7 @@ using namespace std;
 //Map 사용법 익히기. sstream도.
 //getline(cin, s) && s != " " 하면 공백 나올떄까지 입력 가능
 //map.find()하면 못찾으면 .end iterator 반환
+//https://blockdmask.tistory.com/87
 map<string, string>dictionary;
 
 int main() {
