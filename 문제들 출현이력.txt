@@ -1,0 +1,24 @@
+Chp.2
+x
+
+Chp.3
+Sliding Window (2016)
+그외는 x
+
+Chp.4
+x
+
+Chp.5
+Huffman Coding Tree (2019)
+그외는 x
+
+Chp.6
+x
+
+Chp.7
+兔子与星空(2020)
+그외는 x
+
+Chp.8
+Distance Sorting(2020)
+그외는 x
