@@ -10,51 +10,53 @@
 #include <ctype.h>
 #include <string>
 #include <stdio.h>
+#include <map>
+#include <deque>
 #include <queue>
+#include <stack>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
-int n, m, key;
-char action;
-int numbers[100000];
+//3 = 101
+//1<<2 = 100
+int nums[100000];
+int n, m, op;
+char act;
 
-//1 = 01
-//2 = 10
-
-void qAction(int q) { //execute action for q
-	int i, t, sum = 0;
-	t = 1 << q;
-
-	for (i = 0; i < n; i++) {
-		if (t & numbers[i]) {
-			sum++;
-		}
+void cAction() {
+	for (int i = 0; i < n; i++) {
+		nums[i] += op;
 	}
-	cout << sum << endl;
 }
 
-void cAction(int c) {
+void qAction() {
+	int count = 0;
+	int mask = 1 << op;
 	for (int i = 0; i < n; i++) {
-		numbers[i] = (numbers[i] + c) % 65536;
+		if (mask & nums[i]) {
+			count++;
+		}
 	}
+	cout << count << endl;
 }
 
 int main() {
+	
 	cin >> n >> m;
-
-
-	for (int j = 0; j < n; j++) {
-		cin >> numbers[j];
+	for (int i = 0; i < n; i++) {
+		cin >> nums[i];
 	}
 
 	for (int i = 0; i < m; i++) {
-		cin >> action >> key;
-
-		if (action == 'Q') {
-			qAction(key);
+		cin >> act >> op;
+		if (act == 'Q') {
+			qAction();
 		}
-		else if (action == 'C') {
-			cAction(key);
+		if (act == 'C') {
+			cAction();
 		}
 	}
+
 }
