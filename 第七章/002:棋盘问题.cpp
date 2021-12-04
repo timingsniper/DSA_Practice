@@ -17,47 +17,55 @@
 #include <fstream>
 #include <sstream>
 
+
+/*
+* Big Idea:
+* dfs써야한다. 외워라 걍.
+* 
+* 
+*
+* 
+*/
 using namespace std;
-int n, k; // n : dimension, k : number of chess pieces
+
+char board[8][8];
 int a[10];
-char board[10][10];
-int ans, counter;
+int answer, counter;
+int n, k;
 
 void dfs(int current) {
-	if (counter == k) { //if counter reaches total num of chess pieces
-		ans++;
+	if (counter == k) { //체스 말 개수만큼 돌았다면
+		answer++; //답의 값 1 늘리고 리턴
 		return;
 	}
-	if (current >= n) { //if current exceeds dimension
-		return;
+	if (current >= n) { //current 값이 크기와 같거나 더 크다면
+		return; //끗
 	}
 	for (int i = 0; i < n; i++) {
-		if (!a[i] && board[current][i] == '#') { //if a[i] == 0 and current row's pos i is empty
+		if (!a[i] && board[current][i] == '#') { //a[i]값 0에 이 자리가 비어있다면
 			a[i] = 1;
-			counter++;
-			dfs(current + 1);
-			a[i] = 0;
-			counter--;
+			counter++; //a[i]값 업데이트 후 이 자리에 체스 말을 놔보자.
+			dfs(current + 1); //이상태로 담줄도 보자
+			a[i] = 0; //비우기
+			counter--; //이번줄 마무리
 		}
 	}
-	dfs(current + 1);
+	dfs(current + 1); //이번 줄 검색 끝, 다음줄로
 }
 
-
 int main() {
+	
 	while (cin >> n >> k) {
 		if (n == -1 && k == -1) {
 			break;
 		}
 		getchar();
-		ans = 0; counter = 0;
-		memset(a, 0, sizeof(a));
-
+		counter = 0; answer = 0;
 		for (int i = 0; i < n; i++) {
 			cin >> board[i];
 		}
 		dfs(0);
-		cout << ans << endl;
+		cout << answer << endl;
 	}
 
 }
