@@ -1,24 +1,42 @@
 Chp.2
+Double Queue (@016)
 x
 
-Chp.3
+Chp.3 Stack Queue
 Sliding Window (2016)
+
 그외는 x
 
-Chp.4
+Chp.4 String
+最长公共子串(2017)
 x
 
-Chp.5
+Chp.5 Binary Tree
 Huffman Coding Tree (2019)
+Cartesian Tree (2017)
 그외는 x
 
-Chp.6
+Chp.6 Tree
+The xor-longest Path (2016)
+Ubiquitous Religions (2019)
 x
 
-Chp.7
+Chp.7 Graph
 兔子与星空(2020)
-그외는 x
+The Unique MST （2016)
 
 Chp.8
 Distance Sorting(2020)
+吉老师的汉诺塔 (2016)
+重要逆序对(2017)
+Ultra-QuickSort (2018)
 그외는 x
+
+misc
+词典 （2016, 2018, pair 사용)
+Seek the Name, Seek the Fame (2016)
+跑步 (2017)
+Field Reduction (2018)
+Expression Expression tree Expression evaluation (2018)
+Angry Cows(2018)
+舰队、海域出击！(2019, dfs)
